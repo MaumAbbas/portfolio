@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<%- include('partials/navbar') %>
+
+<section class="page">
+    <h1>Projects</h1>
+    <div class="projects-grid">
+        <% projects.forEach(project => { %>
+            <div class="project-card">
+                <h3><%= project.title %></h3>
+                <p class="project-tech"><%= project.tech %></p>
+                <p class="project-description"><%= project.description %></p>
+                <ul class="project-features">
+                    <% project.features.forEach(feature => { %>
+                        <li><%= feature %></li>
+                    <% }) %>
+                </ul>
+            </div>
+        <% }) %>
+    </div>
+</section>
+
+<%- include('partials/footer') %>
+<script src="/js/script.js"></script>
+</body>
+</html>
